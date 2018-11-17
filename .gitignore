@@ -1,5 +1,0 @@
-*.class
-**/project/
-**/target/
-scalaVersion/build.sbt
-
