@@ -10,9 +10,15 @@ import java.io.IOException;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException{
-        Map<String, Integer> map = new HashMap<>();
+    public static void main(String[] args) throws IOException {
         File file = new File("kjv.txt");
+        long start = System.currentTimeMillis();
+        findTopWords(file);
+        System.out.printf("total execution time = %dms\n", System.currentTimeMillis() - start);
+    }
+
+    public static void findTopWords(File file) throws IOException {
+        Map<String, Integer> map = new HashMap<>();
         Scanner fileReader = new Scanner(file);
         while(fileReader.hasNext()) {
             String word = fileReader.next();
